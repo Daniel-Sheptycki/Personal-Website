@@ -1,0 +1,174 @@
+.experience {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 3rem 0;
+    opacity: 0;
+    max-width: 1250px;
+    margin: 0 auto;
+    transform: translateY(20px); /* Start slightly below */
+    > header {
+        h2 {
+            font-weight: 300;
+            font-size: 2.5em;
+            letter-spacing: 0.06em;
+        }
+    }
+    p, li {
+        font-size: 1.2em;
+        line-height: 1.5em;
+        font-weight: 300;
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .skills-used {
+        padding: 1rem 0;
+        header {
+            padding: 0 !important;
+            font-weight: 600;
+            font-size: 1.2em;
+            color: #444;
+        }
+    }
+    .position-skills-used-list {
+        width: 100%;
+        padding: 1rem 0;
+        font-weight: 200;
+        font-size: 1.3em;
+    }
+    > div {
+        display: flex;
+        max-width: 1000px;
+        margin: 0 auto;
+        flex-direction: column;
+        > div {
+            width: 90%;
+            margin: 0 auto;
+            > header {
+                padding: 3rem;
+                h3 {
+                    font-size: 1.5em;
+                    border-bottom: 1px dashed #ccc;
+                    width: fit-content;
+                    margin: 0 auto;
+                    padding-bottom: 0.5em;
+                }
+            }
+        }
+    }
+    .position {
+        * {
+            text-align: left;
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            .drop-down-icon {
+                padding: 0 0.5rem 2rem;
+            }
+        }
+        header {
+            padding: 0.5rem 0 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.25em;
+            .dash {
+                display: none;
+            }
+            .position-title {
+                font-weight: 400;
+                font-size: 1.5em;
+                width: 100%;
+                em {
+                    font-style: normal;
+                    font-weight: 400;
+                    color: #222;
+                }
+            }
+            
+            .location {
+                width: 100%;
+                font-weight: 600;
+                font-size: 1.2em;
+                color: #444;
+            }
+    
+            .timeframe {
+                width: 100%;
+                color: #666;
+                font-weight: 300;
+                font-size: 1.2em;
+            }
+        }
+        .position-description {
+            display: none;
+            border-bottom: 1px dashed #ccc;
+            padding-bottom: 2em;
+            margin-bottom: 2em;
+        }
+        &.expanded {
+            .position-description {
+                display: block;
+            }
+        }
+    }
+    .skills {
+        margin-bottom: 4rem;
+        .content {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            gap: 2rem;
+            > div {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                width: 100%;
+                max-width: 375px;
+                > header {
+                    h4 {
+                        font-size: 1.2em;
+                        font-weight: 500;
+                    }
+                }
+                ul {
+                    list-style-type: circle;
+                    display: flex;
+                    width: fit-content;
+                    margin: 0 auto;
+                    width: 70%;
+                    li {
+                        .time {
+                            font-weight: 200;
+                            font-style: italic;
+                            font-size: 0.9em;
+                        }
+                    }
+                }
+            }
+            .hard-skills {
+                border-bottom: 1px dotted #ccc;
+                padding-bottom: 2rem;
+            }
+            @media screen and (min-width: 869px) {
+                .hard-skills {
+                    border-bottom: none;
+                    padding-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+.experience.animate {
+    animation: fadeInUp 0.6s ease forwards; 
+}

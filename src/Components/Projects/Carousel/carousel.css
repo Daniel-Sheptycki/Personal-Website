@@ -1,0 +1,113 @@
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    min-height: 550px;
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+    max-width: 700px;
+    .carousel-inner {
+        .carousel-item {
+            visibility: hidden;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            top: 50%;
+            height: 40vh;
+            min-height: 440px;
+            left: 50%;
+            background-color: white;
+            transform: translate(-50%, -50%);
+            padding: 0 2rem;
+            background-color: white;
+
+            &.active {
+                visibility: visible;
+                transform: translate(-50%, -50%);
+                z-index: 1;
+            }
+
+            &.forward {
+                transform: translate(50%, -50%);
+            }
+
+            &.hidden {
+                transform: translate(-150%, -50%);
+            }
+
+            &.behind {
+                transform: translate(-150%, -50%);
+            }
+            &.second-forward {
+                transform: translate(150%, -50%);
+            }
+            &.active, &.forward, &.behind {
+                visibility: visible;
+                transition: transform 0.5s ease-in-out;
+            }
+            &.moving-back {
+                &.behind {
+                    z-index: -1;
+                }
+                &.active {
+                    z-index: 1;
+                }
+                &.forward {
+                    z-index: 1;
+                }
+            }
+            &.moving-forward {
+                &.active {
+                    z-index: 0;
+                }
+                &.forward {
+                    z-index: 1;
+                }
+                &.behind {
+                    z-index: -1;
+                }
+            }
+            &.no-animaton {
+                transition: none;
+            }
+        }
+    }
+    .dots {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+        gap: 0.5rem;
+        z-index: 9999;
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ccc;
+
+            &.active {
+                background-color: #000;
+            }
+        }
+    }
+    .controls {
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+        i {
+            font-size: 1.5rem;
+            padding: 1rem;
+        }
+    }
+}
